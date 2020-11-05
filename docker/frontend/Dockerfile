@@ -11,5 +11,5 @@ ENV PATH /app/node_modules/.bin:$PATH
 # Финальный слой содержит билд нашего приложения.
 ADD frontend /app/src
 WORKDIR /app/src
-RUN npm run build
+# RUN npm run build
 CMD npm run start
