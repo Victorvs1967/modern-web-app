@@ -1,7 +1,12 @@
-const express = require("express"),
-      app = express();
+import express from 'express';
+import template from './src/template';
+
+const app = express();
+
+app.use('/dist', express.static('../dist'));
+
+app.get('*', (req, res) => {
+    res.send(template('Modern Web App'));
+});
 
 app.listen(process.env.APP_FRONTEND_PORT);
-app.get('*', (req, res) => {
-    res.send('<h1>Hello, World!</h1>')
-});
